@@ -13,7 +13,7 @@ const Orders = (props) => (
 		  </thead>
 		  <tbody>
 		  	<tr className="table-dark">
-		      <th scope="row">ETC-BTC</th>
+		      <th scope="row" colSpan="5">ETC-BTC</th>
 		    </tr>
 		    <tr>
 		      <th scope="row">10/11/2018</th>
@@ -37,7 +37,7 @@ const Orders = (props) => (
 		      <td>0.00175</td>
 		    </tr>
 		    <tr className="table-dark">
-		      <th scope="row">EOS-BTC</th>
+		      <th scope="row" colSpan="5">EOS-BTC</th>
 		    </tr>
 		    <tr>
 		      <th scope="row">10/11/2018</th>
@@ -54,7 +54,7 @@ const Orders = (props) => (
 		      <td>0.00175</td>
 		    </tr>
 		    <tr className="table-dark">
-		      <th scope="row">LTC-BTC</th>
+		      <th scope="row" colSpan="5">LTC-BTC</th>
 		    </tr>
 		    <tr>
 		      <th scope="row">10/11/2018</th>
