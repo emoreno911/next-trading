@@ -1,37 +1,39 @@
-const Trade = (props) => (
+const Trade = ({ticker}) => (
   <div className="tab-pane" role="tabpanel" aria-labelledby="nav-profile-tab">
 	  	
 	  	<div className="col-12 d-flex flex-wrap py-4">
 	  		<div className="col-6">
-	  			<h3 className="text-secondary">ETH-BTC</h3>
+	  			<h3 className="text-secondary">{ticker.symbol}</h3>
 	  		</div>
 	  		<div className="col-6">
-	  			<h3 className="text-success text-right">2.45 %</h3>
+	  			<h3 className={`text-right ${ticker.changeRate >= 0 ? 'text-success':'text-danger'}`}>
+						{(ticker.changeRate * 100).toFixed(2)} %
+					</h3>
 	  		</div>
 
 	  		<div className="col-4">
 	  			<small>Buy</small>
-	  			<span className="d-block text-light"> 235</span>
+	  			<span className="d-block text-light"> {ticker.buy}</span>
 	  		</div>
 	  		<div className="col-4">
 	  			<small>Sell</small>
-	  			<span className="d-block text-light"> 238</span>
+	  			<span className="d-block text-light"> {ticker.sell}</span>
 	  		</div>
 	  		<div className="col-4">
 	  			<small>24h High</small>
-	  			<span className="d-block text-light"> 248</span>
+	  			<span className="d-block text-light"> {ticker.high}</span>
 	  		</div>
 	  		<div className="col-4">
 	  			<small>24h Low</small>
-	  			<span className="d-block text-light"> 230</span>
+	  			<span className="d-block text-light"> {ticker.low}</span>
 	  		</div>
 	  		<div className="col-4">
 	  			<small>Total Vol</small>
-	  			<span className="d-block text-light"> 52642</span>
+	  			<span className="d-block text-light"> {ticker.vol}</span>
 	  		</div>
 	  		<div className="col-4">
 	  			<small>Last Checked</small>
-	  			<span className="d-block text-light">1 min ago</span>
+	  			<span className="d-block text-light">X min ago</span>
 	  		</div>
 
 	  	</div>
@@ -56,28 +58,30 @@ const Trade = (props) => (
 				    </div>
 				  </div>
 		          
-					<div className="form-group">
+					<div className="row">
+					<div className="col-md-6 form-group">
 					    <label className="col-form-label col-form-label-lgx">Price</label>
 					    <div className="form-group">
 					    	<div className="input-group">
-					    		<input className="form-control" type="text" placeholder="Price" id="inputLarge" />
+					    		<input className="form-control" type="text" placeholder="Price" />
 							    <div className="input-group-append">
-						          <span className="input-group-text" id="inputGroupPrepend">BTC</span>
+						          <span className="input-group-text">{ticker.coinTypePair}</span>
 						        </div>
 					    	</div>
 					    </div>	    
 					</div>
-					<div className="form-group">
+					<div className="col-md-6 form-group">
 					    <label className="col-form-label col-form-label-lgx">Amount</label>
 					    
 					    <div className="form-group">
 					    	<div className="input-group">
-					    		<input className="form-control" type="text" placeholder="Amount" id="inputLarge2" />
+					    		<input className="form-control" type="text" placeholder="Amount"/>
 							    <div className="input-group-append">
-						          <span className="input-group-text" id="inputGroupPrepend">ETH</span>
+						          <span className="input-group-text">{ticker.coinType}</span>
 						        </div>
 					    	</div>
 					    </div>
+					</div>
 					</div>
 
 		          <div className="d-flex">
@@ -91,7 +95,7 @@ const Trade = (props) => (
 	  	
 	  	<div className="col-12 my-4">
 	  		<div className="card">
-	  			<h5 className="card-header">Orders History</h5>
+	  			<h5 className="card-header">{ticker.symbol} Orders</h5>
 	  			<div className="card-body p-0">
 	  				<table className="table table-hover table-striped m-0">
 				      <thead>

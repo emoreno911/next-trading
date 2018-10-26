@@ -1,7 +1,7 @@
 const Orders = (props) => (
-  <div className="tab-pane" role="tabpanel" aria-labelledby="nav-contact-tab">
-
-	  	<table className="table table-hover table-striped">
+  <div className="tab-pane px-md-3" role="tabpanel" aria-labelledby="nav-contact-tab">
+		<h4 className="d-none d-md-block mt-5">All Orders History</h4>
+	  <table className="table table-hover table-striped">
 		  <thead>
 		    <tr>
 		      <th scope="col">Date</th>
